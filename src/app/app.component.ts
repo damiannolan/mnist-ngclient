@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  private visible: boolean = false;
+  private apiEndPoint: string = 'http://localhost:5000/upload';
+  private image: string = '';
+  private digit: number = 0;
+
+  constructor() {}
 }
