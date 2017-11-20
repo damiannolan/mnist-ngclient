@@ -9,6 +9,7 @@ import { CanvasComponent } from './canvas/canvas.component';
 import { NavComponent } from './nav/nav.component';
 import { UploadComponent } from './upload/upload.component';
 import { HomeComponent } from './home/home.component';
+import { PredictionService } from './services/prediction.service';
 
 
 @NgModule({
@@ -24,7 +25,9 @@ import { HomeComponent } from './home/home.component';
     BrowserModule,
     HttpModule
   ],
-  providers: [],
+  providers: [
+    PredictionService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

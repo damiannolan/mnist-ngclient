@@ -1,9 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { Http, Headers, RequestOptions } from '@angular/http';
-import { Observable } from 'rxjs/Observable';
-
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/catch';
+import { PredictionService } from '../services/prediction.service';
 
 @Component({
   selector: 'app-upload',
@@ -13,16 +9,21 @@ import 'rxjs/add/operator/catch';
 })
 export class UploadComponent implements OnInit {
   private visible: boolean = false;
-  private apiEndPoint: string = 'http://localhost:5000/upload';
-  private image;
+  private imageFile: File;
   private digit: number = 0;
 
-  constructor(private http: Http) { }
+  private requestData: FormData;
+
+  constructor(private predictionService: PredictionService) { }
 
   ngOnInit() {
   }
 
   predict() {
+    this.predictionService.predict(this.requestData)
+      .subscribe((body) => {
+        this.digit = body;
+      });
     this.visible = true;
   }
 
@@ -31,35 +32,23 @@ export class UploadComponent implements OnInit {
     // https://stackoverflow.com/questions/39933340/angular2-display-image
     let fileList: FileList = evt.target.files;
     //let file = fileList[0];
-    this.image = fileList[0];
+    this.imageFile = fileList[0];
 
     let reader = new FileReader();
     reader.onload = (e: any) => {
-      this.image = e.target.result;
+      this.imageFile = e.target.result;
     }
 
-    reader.readAsDataURL(this.image);
-    console.log(this.image);
+    reader.readAsDataURL(this.imageFile);
+    console.log(this.imageFile);
     /*
       - Take this logic and put it into the predict() function
     */
-    if(fileList[0] && this.image) {
-        console.log('posting');
+    if(fileList[0] && this.imageFile) {
         let file: File = fileList[0];
-        let formData:FormData = new FormData();
-        formData.append('file', file, file.name);
-        let headers = new Headers();
-
-        //let options = new RequestOptions({ headers: headers, responseType:ResponseContentType.Blob });
-        let options = new RequestOptions({ headers: headers });
-        this.http.post(`${this.apiEndPoint}`, formData, options)
-            .map(res => res.json())
-            .subscribe((body) => {
-              // return the body where the digit prediction will be held
-              console.log(body);
-              //this.image = window.URL.createObjectURL(blob);
-              this.digit = body;
-          });
+        //let formData:FormData = new FormData();
+        this.requestData = new FormData();
+        this.requestData.append('file', file, file.name);
     }
   }
 }
