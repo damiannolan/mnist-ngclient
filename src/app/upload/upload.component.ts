@@ -23,8 +23,8 @@ export class UploadComponent implements OnInit {
     this.predictionService.predict(this.requestData)
       .subscribe((body) => {
         this.digit = body;
+        this.visible = true;
       });
-    this.visible = true;
   }
 
   imageUpload(evt) {

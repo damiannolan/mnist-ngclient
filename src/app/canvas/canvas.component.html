@@ -5,7 +5,7 @@
       <div class="card text-center">
         <div class="card-body">
           <h4 class="card-title">
-            Image Upload
+            Draw a digit here
           </h4>
           <div>
             <canvas #canvas></canvas>
@@ -13,6 +13,9 @@
           <div>
             <button (click)="predict()" type="button" class="btn btn-primary">
               Predict
+            </button>
+            <button (click)="clearCanvas()" type="button" class="btn btn-primary">
+              Clear
             </button>
           </div>
           <p *ngIf="visible" class="card-text">The application predicts the digit to be: {{ digit }}</p>
