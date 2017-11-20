@@ -1,43 +1,5 @@
-<!-- Navigation -->
-<nav class="navbar navbar-dark bg-dark mb-1">
-  <a class="mx-auto text-white">MNIST Tensorflow</a>
-</nav>
-
-<!-- Page Content -->
-<div class="container">
-
-    <!-- Page Heading -->
-    <!-- <h1 class="my-4 text-centered">MNIST Tensorflow</h1> -->
-
-    <div class="row">
-      <div class="col-lg-8 col-centered portfolio-item">
-        <div class="card text-center">
-          <div class="card-body">
-            <h4 class="card-title">
-              Image Upload
-            </h4>
-            <div class="img-custom">
-              <img [src]="image" class="card-img-top" alt="Image"/>
-            </div>
-
-            <label class="custom-file my-5">
-              <input type="file" id="file2" class="custom-file-input" (change)="imageUpload($event)" placeholder="Upload File" accept=".jpg,.png">
-              <span class="custom-file-control"></span>
-            </label>
-
-            <div>
-              <button (click)="predict()" type="button" class="btn btn-primary">
-                Predict
-              </button>
-            </div>
-            <p *ngIf="visible" class="card-text">The application predicts the digit to be: {{ digit }}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- /.row -->
-  </div>
-  <!-- /.container -->
+<app-nav></app-nav>
+<router-outlet></router-outlet>
 
   <!-- <label class="custom-file">
       <input type="file" id="file2" class="custom-file-input" (change)="fileChange($event)" placeholder="Upload File" accept=".jpg,.png">
