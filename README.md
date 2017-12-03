@@ -4,6 +4,8 @@ This repository contains a relatively simple web application written using [Angu
 
 ## Getting Started
 
+Before getting the client application up and running I advise heading over to the back end repository linked above and following the instructions in order to launch the server application.
+
 1. Download and install the [Angular CLI Tool](https://cli.angular.io/).
 
 ```
