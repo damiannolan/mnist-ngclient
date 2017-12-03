@@ -1,38 +1,29 @@
-<!-- <div class="container">
-<div class="jumbotron">
-  <h1 class="display-5 text-center">MNIST Digit Prediction</h1>
-  <div class="row">
-    <div class="col-lg-4">
-      <h4 class="text-center">Upload an Image</h4>
-    </div>
-
-    <div class="col-lg-4">
-      <h4 class="text-center">Draw an Image</h4>
-    </div>
-
-  </div>
-  <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p>
-</div>
-</div> -->
-
 <div class="container">
   <div class="jumbotron text-center">
     <h1>MNIST Digit Prediction</h1>
-    <p class="lead">The MNIST data set of handwritten digits is a subset of a larger set available from NIST. MNIST contains a training set of 60,000 samples and test set of 10,000 samples. The digits have been size-normailised and centered in a fixed-size image. This application employs the MNIST data set in order to train an artificial neural network in order to make prediction of images and digit drawing.</p>
-    <p><a class="btn btn-lg btn-success" href="http://yann.lecun.com/exdb/mnist/" role="button">Learn more</a></p>
+    <p class="lead">The MNIST data set of handwritten digits is a subset of a larger set available from NIST. MNIST contains a training set
+      of 60,000 samples and test set of 10,000 samples. The digits have been size-normailised and centered in a fixed-size
+      image. This application employs the MNIST data set in order to train an artificial neural network in order to make
+      prediction of images and digit drawing.</p>
+    <p>
+      <a class="btn btn-lg btn-block btn-success" href="http://yann.lecun.com/exdb/mnist/" role="button">Learn more</a>
+    </p>
 
-    <!-- Example row of columns -->
-  <div class="row">
-    <div class="col-md-6">
-      <h2>Upload an Image</h2>
-      <p>Upload an image of a digit from your local files and let us make our best prediction.</p>
-      <p><a class="btn btn-primary" href="#" role="button">Upload &raquo;</a></p>
+    <div class="row">
+      <div class="col-md-6">
+        <h2>Upload an Image</h2>
+        <p>Browse your local files to select an image and let us make our best prediction.</p>
+        <p>
+          <a class="btn btn-primary btn-lg btn-block" routerLink="/upload" role="button">Upload</a>
+        </p>
+      </div>
+      <div class="col-md-6">
+        <h2>Draw an Image</h2>
+        <p>Draw an image using your mouse on the HTML Canvas provided and let us make our best prediction.</p>
+        <p>
+          <a class="btn btn-primary btn-lg btn-block" routerLink="/canvas" role="button">Canvas</a>
+        </p>
+      </div>
     </div>
-    <div class="col-md-6">
-      <h2>Draw an Image</h2>
-      <p>Draw an image using your mouse on the HTML Canvas provided and let us make our best prediction.</p>
-      <p><a class="btn btn-primary" href="#" role="button">Canvas &raquo;</a></p>
-    </div>
-  </div>
   </div>
 </div>
