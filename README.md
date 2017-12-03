@@ -50,3 +50,7 @@ The application consists of a small number of simple componenets and includes on
 - Nav Component
 - Prediction Service
 - Upload Component
+
+## Example
+
+![GIF](https://gyazo.com/da6b45a36d7f9b996969ff9a72a91a33)
